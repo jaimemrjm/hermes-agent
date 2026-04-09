@@ -26,6 +26,9 @@ docker run -it --rm \
 
 This drops you into the setup wizard, which will prompt you for your API keys and write them to `~/.hermes/.env`. You only need to do this once. It is highly recommended to set up a chat system for the gateway to work with at this point.
 
+NOTE: when it asks for "Terminal Backend", leave as default (local) and 
+"Install the gateway as a systemd service?", answer "n"
+
 ## Running in gateway mode
 
 Once configured, run the container in the background as a persistent gateway (Telegram, Discord, Slack, WhatsApp, etc.):
@@ -46,6 +49,9 @@ To open an interactive chat session against a running data directory:
 docker run -it --rm \
   -v ~/.hermes:/opt/data \
   nousresearch/hermes-agent
+
+# Alternative
+docker exec -it hermes hermes chat
 ```
 
 ## Persistent volumes

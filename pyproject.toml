@@ -74,8 +74,8 @@ rl = [
 ]
 yc-bench = ["yc-bench @ git+https://github.com/collinear-ai/yc-bench.git ; python_version >= '3.12'"]
 all = [
-  "hermes-agent[modal]",
-  "hermes-agent[daytona]",
+  #"hermes-agent[modal]",
+  #"hermes-agent[daytona]",
   "hermes-agent[messaging]",
   # matrix excluded: python-olm (required by matrix-nio[e2e]) is upstream-broken
   # on modern macOS (archived libolm, C++ errors with Clang 21+). Including it
@@ -85,7 +85,7 @@ all = [
   "hermes-agent[cli]",
   "hermes-agent[dev]",
   "hermes-agent[tts-premium]",
-  "hermes-agent[slack]",
+  #"hermes-agent[slack]",
   "hermes-agent[pty]",
   "hermes-agent[honcho]",
   "hermes-agent[mcp]",
@@ -94,8 +94,8 @@ all = [
   "hermes-agent[acp]",
   "hermes-agent[voice]",
   "hermes-agent[dingtalk]",
-  "hermes-agent[feishu]",
-  "hermes-agent[mistral]",
+  #"hermes-agent[feishu]",
+  #"hermes-agent[mistral]",
 ]
 
 [project.scripts]
