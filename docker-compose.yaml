@@ -1,4 +1,15 @@
 services:
+  camofox-browser:
+    image: jo-inc/camofox-browser
+    container_name: camofox-browser
+    restart: unless-stopped
+    ports:
+      - "9377:9377"
+    environment:
+      - CAMOFOX_PORT=9377
+    networks:
+      - hermes-net
+
   hermes:
     build:
       context: .
@@ -25,7 +36,6 @@ services:
           memory: 4G
           cpus: "2.0"
   # dashboard:
-  #   #image: nousresearch/hermes-agent:latest
   #   build:
   #     context: .
   #     dockerfile: Dockerfile
