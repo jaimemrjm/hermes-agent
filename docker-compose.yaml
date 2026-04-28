@@ -1,6 +1,7 @@
 services:
   camofox-browser:
-    image: jo-inc/camofox-browser
+    image: camofox-browser:135.0.1-aarch64897
+    
     container_name: camofox-browser
     restart: unless-stopped
     ports:
@@ -23,40 +24,11 @@ services:
       - ~/.hermes:/opt/data
     networks:
       - hermes-net
-    # Uncomment to forward specific env vars instead of using .env file:
-    environment:
-      - PUID=1000
-      - PGID=1001
-      - TZ="Madrid/Europe"
-    #   - OPENAI_API_KEY=${OPENAI_API_KEY}
-    #   - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
     deploy:
       resources:
         limits:
           memory: 4G
           cpus: "2.0"
-  # dashboard:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
-  #   container_name: hermes-dashboard
-  #   restart: unless-stopped
-  #   command: dashboard --host 0.0.0.0
-  #   ports:
-  #     - "9119:9119"
-  #   volumes:
-  #     - ~/.hermes:/opt/data
-  #   environment:
-  #     - GATEWAY_HEALTH_URL=http://hermes:8642
-  #   networks:
-  #     - hermes-net
-  #   depends_on:
-  #     - hermes
-  #   deploy:
-  #     resources:
-  #       limits:
-  #         memory: 512M
-  #         cpus: "0.5"
 
 networks:
   hermes-net:
